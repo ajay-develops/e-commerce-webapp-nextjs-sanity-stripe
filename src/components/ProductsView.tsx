@@ -1,4 +1,5 @@
 import { Category, Product } from "../../sanity.types";
+import { CategorySelector } from "./CategorySelector";
 import ProductGrid from "./ProductGrid";
 
 interface ProductViewProps {
@@ -11,7 +12,7 @@ const ProductsView = ({ products, categories }: ProductViewProps) => {
     <div className="flex flex-col">
       {/* categories */}
       <div className="w-full sm:w-[200px]">
-        {/* <CategorySelectorComponent categories={categorues} /> */}
+        <CategorySelector categories={categories} />
       </div>
       {/* products */}
       <div className="flex-1">
