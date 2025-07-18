@@ -71,7 +71,7 @@ export const product = defineType({
       return {
         title: select.title,
         media: select.media,
-        subtitle: "$" + select.subtitle,
+        subtitle: "£" + select.subtitle,
       };
     },
   },
