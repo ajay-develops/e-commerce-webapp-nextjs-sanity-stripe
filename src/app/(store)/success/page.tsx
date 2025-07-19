@@ -14,11 +14,11 @@ function SuccessPage() {
   const clearBasket = useBasketStore((state) => state.clearBasket);
   const sessionId = searchParams.get("session_id");
 
-  //   useEffect(() => {
-  //     if (orderNumber) {
-  //       clearBasket();
-  //     }
-  //   }, [orderNumber, clearBasket]);
+  useEffect(() => {
+    if (orderNumber) {
+      clearBasket();
+    }
+  }, [orderNumber, clearBasket]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
