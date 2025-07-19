@@ -1,13 +1,16 @@
 "use client";
 
+import { CopyIcon } from "@sanity/icons";
 import { toast } from "sonner";
 
 const CopyText = ({
+  showCopyIcon = false,
   children,
-  copyText,
+  copyText = "",
 }: {
-  children: React.ReactElement;
-  copyText: string;
+  showCopyIcon?: boolean;
+  children: React.ReactElement | any;
+  copyText?: string;
 }) => {
   function handleCopy() {
     try {
@@ -18,8 +21,9 @@ const CopyText = ({
     }
   }
   return (
-    <span className="cursor-copy flex gap-2" onClick={handleCopy}>
+    <span className="cursor-copy flex gap-2 w-full" onClick={handleCopy}>
       {children}
+      {showCopyIcon && <CopyIcon />}
     </span>
   );
 };
