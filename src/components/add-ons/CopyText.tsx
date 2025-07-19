@@ -18,9 +18,9 @@ const CopyText = ({
     }
   }
   return (
-    <div className="cursor-copy flex gap-2" onClick={handleCopy}>
+    <span className="cursor-copy flex gap-2" onClick={handleCopy}>
       {children}
-    </div>
+    </span>
   );
 };
 
