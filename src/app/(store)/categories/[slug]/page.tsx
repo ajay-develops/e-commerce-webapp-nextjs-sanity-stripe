@@ -24,7 +24,11 @@ const CategoryPage = async ({
             .join(" ")}{" "}
           Collection
         </h1>
-        <ProductsView products={products} categories={categories} />
+        {products ? (
+          <ProductsView products={products} categories={categories} />
+        ) : (
+          <div>No products found</div>
+        )}
       </div>
     </div>
   );
