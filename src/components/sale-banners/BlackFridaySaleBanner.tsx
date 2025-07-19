@@ -20,7 +20,7 @@ const BlackFridaySaleBanner = async () => {
             {sale.description}
           </p>
           <div className="flex">
-            <CopyText copyText={sale.couponCode}>
+            <CopyText copyText={sale?.couponCode || ""}>
               <div className="bg-white text-black py-4 px-6 rounded-full shadow-md transform hover:scale-105 transition duration-300">
                 <span className="font-bold text-base sm:text-xl">
                   Use code:{" "}
