@@ -55,7 +55,7 @@ function SuccessPage() {
                   <CopyText copyText={orderNumber}>
                     <>
                       <span className="break-words">{orderNumber}</span>
-                      <CopyIcon size={20} />
+                      <CopyIcon size={14} />
                     </>
                   </CopyText>
                 </span>
@@ -68,7 +68,7 @@ function SuccessPage() {
                   <CopyText copyText={sessionId}>
                     <>
                       <span className="w-[90%] break-words">{sessionId}</span>
-                      <CopyIcon size={20} />
+                      <CopyIcon size={14} />
                     </>
                   </CopyText>
                 </span>
