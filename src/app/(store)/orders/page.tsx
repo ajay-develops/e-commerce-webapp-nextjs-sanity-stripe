@@ -107,27 +107,40 @@ async function OrderPage() {
                     <p className="text-sm font-semibold text-gray-600 mb-3 sm:mb-4">
                       Order Items
                     </p>
-                    {/* <div className="space-y-3 sm:space-y-4">
-                      {order.products?.map((product) => (
+                    <div className="space-y-3 sm:space-y-4">
+                      {order?.products?.map((product) => (
                         <div
-                          key={product._id}
+                          key={product?.product?._id}
                           className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 py-2 border-b last:border-b-0"
                         >
                           <div className="flex items-center gap-3 sm:gap-4">
-                            {product?.image && (
+                            {product?.product?.image && (
                               <div className="relative h-14 w-14 sm:h-16 sm:w-16 flex-shrink-0 rounded-md overflow-hidden">
                                 <Image
-                                  src={imageUrl(product.image.url())}
-                                  alt={product.name ?? ""}
+                                  src={imageUrl(product?.product?.image).url()}
+                                  alt={product?.product.name ?? ""}
                                   className="object-cover"
                                   fill
                                 />
                               </div>
                             )}
+                            <div>
+                              <p className="font-medium text-sm sm:text-base">
+                                Quantity: {product.quantity ?? "N/A"}
+                              </p>
+                            </div>
                           </div>
+                          <p className="font-medium text-right">
+                            {product.product?.price && product.quantity
+                              ? formatCurrency(
+                                  product.product.price * product.quantity,
+                                  order.currency,
+                                )
+                              : "N/A"}
+                          </p>
                         </div>
                       ))}
-                    </div> */}
+                    </div>
                   </div>
                 </div>
               );
