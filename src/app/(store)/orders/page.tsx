@@ -26,7 +26,7 @@ async function OrderPage() {
           My Orders
         </h1>
 
-        {Boolean(orders) ? (
+        {Boolean(orders?.length) ? (
           <div className="space-y-6 sm:space-y-8">
             {orders?.map((order) => {
               return (
