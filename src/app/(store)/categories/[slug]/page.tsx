@@ -2,6 +2,9 @@ import ProductsView from "@/components/ProductsView";
 import { getAllCategories } from "@/sanity/lib/products/getAllCategories";
 import { getProductByCategory } from "@/sanity/lib/products/getProductsByCategory";
 
+export const dynamic = "force-static";
+export const revalidate = 3600;
+
 const CategoryPage = async ({
   params,
 }: {
@@ -13,6 +16,15 @@ const CategoryPage = async ({
 
   const products = await getProductByCategory(slug);
   const categories = await getAllCategories();
+
+  console.log(
+    crypto.randomUUID().slice(0, 6),
+    ">>> Re-rendered the home page cache with",
+    products?.length,
+    "products and",
+    categories?.length,
+    "categories",
+  );
 
   return (
     <div className="flex flex-col items-center justify-top min-h-screen bg-gray-100 p-4">
