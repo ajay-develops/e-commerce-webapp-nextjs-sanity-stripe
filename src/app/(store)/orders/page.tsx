@@ -125,6 +125,9 @@ async function OrderPage() {
                               </div>
                             )}
                             <div>
+                              <p className="font-bold text-md sm:text-base">
+                                {product.product?.name}
+                              </p>
                               <p className="font-medium text-sm sm:text-base">
                                 Quantity: {product.quantity ?? "N/A"}
                               </p>
